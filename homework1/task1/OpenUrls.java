@@ -1,4 +1,4 @@
-package homework1;
+package homework1.task1;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

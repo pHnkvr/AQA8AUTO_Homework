@@ -1,4 +1,4 @@
-package homework1;
+package homework1.task1;
 
 public class Urls {
 

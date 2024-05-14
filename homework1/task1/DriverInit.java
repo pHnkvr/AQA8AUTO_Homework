@@ -1,4 +1,4 @@
-package homework1;
+package homework1.task1;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
