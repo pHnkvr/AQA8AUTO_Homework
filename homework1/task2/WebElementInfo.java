@@ -27,9 +27,9 @@ public class WebElementInfo {
         String bigger = (width1 * height1 > width2 * height2) ? element1.getTagName() : element2.getTagName();
 
 
-        System.out.println("Елемент, який знаходиться вище на сторінці: " + above);
-        System.out.println("Елемент, який знаходиться лівіше на сторінці: " + left);
-        System.out.println("Елемент, який має більшу площу: " + bigger);
+        System.out.println("Элемент, который находится выше на странице: " + above);
+        System.out.println("Элемент, который находится левее на странице: " + left);
+        System.out.println("Элемент, который имеет наибольшую площадь: " + bigger);
     }
 
     public static void main(String[] args) throws InterruptedException {
