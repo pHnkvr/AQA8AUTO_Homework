@@ -67,8 +67,6 @@ public class OpenUrl {
         Thread.sleep(3000);
 
         driver.quit();
-        //sendKeys("Printed Chiffon Dress"));
-        //click();
-
+        
     }
 }
