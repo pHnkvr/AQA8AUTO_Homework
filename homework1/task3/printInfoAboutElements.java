@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class printInfoAboutIDOfElement {
+public class printInfoAboutElements {
     public static void printInfoAbout(WebElement element){
         String elementId = element.getAttribute("id");
         String tagName = element.getTagName();
