@@ -1,6 +1,5 @@
 package homework1.task1;
 
-import homework1.task2.WebElementInfo;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
