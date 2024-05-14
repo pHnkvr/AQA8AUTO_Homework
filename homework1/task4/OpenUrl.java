@@ -59,7 +59,7 @@ public class OpenUrl {
         moveCursor2.click();
         Thread.sleep(3000);
 
-        Select sizeSecond = new Select(driver.findElement(Locators.modelSize));
+        Select sizeSecond = new Select(driver.findElement(Locators.modelSize)); //т.к. этих шорт нет на складе - создал этот метод
         sizeSecond.selectByValue("2");
         Thread.sleep(3000);
 
