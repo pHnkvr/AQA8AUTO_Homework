@@ -37,22 +37,7 @@ public class MakingActions {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = DriverInit.setUpDriver();
         driver.get(Urls.TextBox);
-        WebElement elementCarList = driver.findElement(Locators.carList);
-        Select cars = new Select(elementCarList);
-        cars.selectByValue("Renault Car");
-        List<WebElement> allCars = cars.getOptions();
-        System.out.println("Автомобили в продаже:");
-        int lastIndexForCars = allCars.size() - 1;
-        int currentIndexForCars = 0;
-        for (WebElement element : allCars) {
-            System.out.print(element.getText());
-            if (currentIndexForCars < lastIndexForCars) {
-                System.out.print(", ");
-            } else {
-                System.out.print(".");
-            }
-            currentIndexForCars++;
-        }
+        chooseCars(driver);
 
         WebElement countriesFromLeft = driver.findElement(Locators.leftTable);
 
