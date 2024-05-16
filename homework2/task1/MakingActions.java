@@ -15,13 +15,16 @@ public class MakingActions {
         private static final By leftTable = By.xpath("//select[@name='FromLB']");
         private static final By rightTable = By.xpath("//select[@name='ToLB']");
         private static final By selectCountries = By.xpath("//input[@value='->']");
+        private static final By clickOnFirstCheckBox= By.xpath("//input[@id='check1']");
+        private static final By clickOnSecondCheckBox= By.xpath("//input[@id='check2']");
     }
     public static void chooseCars(WebDriver driver){
         WebElement elementCarList = driver.findElement(Locators.carList);
         Select cars = new Select(elementCarList);
+
         cars.selectByValue("Renault Car");
         List<WebElement> allCars = cars.getOptions();
-        System.out.println("Автомобили в продаже:");
+        System.out.println("\nАвтомобили в продаже:");
         int lastIndexForCars = allCars.size() - 1;
         int currentIndexForCars = 0;
         for (WebElement element : allCars) {
@@ -36,7 +39,6 @@ public class MakingActions {
     }
     public static void addCountriesFromLeftToRight(WebDriver driver){
         WebElement countriesFromLeft = driver.findElement(Locators.leftTable);
-
         Select leftcountry = new Select(countriesFromLeft);
 
         leftcountry.selectByVisibleText("France");
@@ -54,6 +56,7 @@ public class MakingActions {
         WebElement elementCarList = driver.findElement(Locators.carList);
         Select cars = new Select(elementCarList);
         List<WebElement> allCars = cars.getOptions();
+
         System.out.println("Автомобили в продаже:");
         int lastIndexForCars = allCars.size() - 1;
         int currentIndexForCars = 0;
@@ -66,10 +69,11 @@ public class MakingActions {
             }
             currentIndexForCars++;
         }
-        WebElement countriesFromLeft = driver.findElement(Locators.leftTable);
 
+        WebElement countriesFromLeft = driver.findElement(Locators.leftTable);
         Select leftcountry = new Select(countriesFromLeft);
         List<WebElement> leftCountries = leftcountry.getOptions();
+
         System.out.println("\nСтраны с левой таблицы: ");
         int lastIndexForLeftTable = leftCountries.size() - 1;
         int currentIndexForLeftTable = 0;
@@ -82,9 +86,11 @@ public class MakingActions {
             }
             currentIndexForLeftTable++;
         }
+
         WebElement countriesFromRight = driver.findElement(Locators.rightTable);
         Select rightcountry = new Select(countriesFromRight);
         List<WebElement> rightCountries = rightcountry.getOptions();
+
         System.out.println("\nСтраны с правой таблицы: ");
         int lastIndexForRightTable = rightCountries.size() - 1;
         int currentIndexForRightTable = 0;
