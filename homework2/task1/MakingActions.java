@@ -34,11 +34,7 @@ public class MakingActions {
             currentIndexForCars++;
         }
     }
-    public static void main(String[] args) throws InterruptedException {
-        WebDriver driver = DriverInit.setUpDriver();
-        driver.get(Urls.TextBox);
-        chooseCars(driver);
-
+    public static void addCountriesFromLeftToRight(WebDriver driver){
         WebElement countriesFromLeft = driver.findElement(Locators.leftTable);
 
         Select leftcountry = new Select(countriesFromLeft);
@@ -52,8 +48,27 @@ public class MakingActions {
         leftcountry.deselectByVisibleText("Malaysia");
         leftcountry.selectByVisibleText("Spain");
         driver.findElement(Locators.selectCountries).click();
-        Thread.sleep(3000);
 
+    }
+    public static void printAllInfo(WebDriver driver){
+        WebElement elementCarList = driver.findElement(Locators.carList);
+        Select cars = new Select(elementCarList);
+        List<WebElement> allCars = cars.getOptions();
+        System.out.println("Автомобили в продаже:");
+        int lastIndexForCars = allCars.size() - 1;
+        int currentIndexForCars = 0;
+        for (WebElement element : allCars) {
+            System.out.print(element.getText());
+            if (currentIndexForCars < lastIndexForCars) {
+                System.out.print(", ");
+            } else {
+                System.out.print(".");
+            }
+            currentIndexForCars++;
+        }
+        WebElement countriesFromLeft = driver.findElement(Locators.leftTable);
+
+        Select leftcountry = new Select(countriesFromLeft);
         List<WebElement> leftCountries = leftcountry.getOptions();
         System.out.println("\nСтраны с левой таблицы: ");
         int lastIndexForLeftTable = leftCountries.size() - 1;
@@ -83,6 +98,13 @@ public class MakingActions {
             currentIndexForRightTable++;
         }
 
+    }
+    public static void main(String[] args) throws InterruptedException {
+        WebDriver driver = DriverInit.setUpDriver();
+        driver.get(Urls.TextBox);
+        chooseCars(driver);
+        addCountriesFromLeftToRight(driver);
+        printAllInfo(driver);
         driver.quit();
     }
 }
