@@ -23,27 +23,18 @@ public class MakingActions {
         Select cars = new Select(elementCarList);
 
         cars.selectByValue("Renault Car");
-        List<WebElement> allCars = cars.getOptions();
-        System.out.println("\nАвтомобили в продаже:");
-        int lastIndexForCars = allCars.size() - 1;
-        int currentIndexForCars = 0;
-        for (WebElement element : allCars) {
-            System.out.print(element.getText());
-            if (currentIndexForCars < lastIndexForCars) {
-                System.out.print(", ");
-            } else {
-                System.out.print(".");
-            }
-            currentIndexForCars++;
-        }
+
     }
     public static void addCountriesFromLeftToRight(WebDriver driver){
         WebElement countriesFromLeft = driver.findElement(Locators.leftTable);
+        WebElement deselectVehicleChebox = driver.findElement(Locators.clickOnFirstCheckBox);
+        WebElement selectVehicleChebox = driver.findElement(Locators.clickOnSecondCheckBox);
         Select leftcountry = new Select(countriesFromLeft);
-
         leftcountry.selectByVisibleText("France");
         leftcountry.selectByVisibleText("India");
         leftcountry.deselectByVisibleText("India");
+        deselectVehicleChebox.click();
+        selectVehicleChebox.click();
         leftcountry.selectByVisibleText("Germany");
         leftcountry.selectByVisibleText("Italy");
         leftcountry.selectByVisibleText("Malaysia");
