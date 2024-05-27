@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Parameters Test Suite">
+    <test name="Parameters Test1">
+        <parameter name="searchWord" value="машина"/>
+        <classes>
+            <class name="homework4.Parameters.ParametersFindingTest"/>
+        </classes>
+    </test>
+    <test name="Parameters Test2">
+        <parameter name="searchWord" value="input"/>
+        <classes>
+            <class name="homework4.Parameters.ParametersFindingTest"/>
+        </classes>
+    </test>
+    <test name="Parameters Test3">
+        <parameter name="searchWord" value="розуміння"/>
+        <classes>
+            <class name="homework4.Parameters.ParametersFindingTest"/>
+        </classes>
+    </test>
+</suite>
